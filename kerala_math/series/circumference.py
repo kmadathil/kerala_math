@@ -9,6 +9,10 @@ def vyase(v, n=10, antya_samskara=None):
     Calculates the paridhi (circumference) from the vyAsa (diameter)
 
     Uses the famous Madhava series
+
+    व्यासे वारिधिनिहते रूपहृते व्याससागराभिहते ।
+    त्रिशरादिविषमसंख्याभक्तमृणं स्वं पृथक्क्रमात् कुर्यात् ॥
+
     Inputs:
                    v: diameter
                    n: number of terms
