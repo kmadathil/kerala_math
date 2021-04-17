@@ -2,6 +2,7 @@
 #
 #  Various series for circumference derived by the kerala school
 #
+import math
 
 # The vyAse vAridhinihate series
 def vyase(v, n=10, antya_samskara=None):
@@ -48,5 +49,27 @@ def vyase(v, n=10, antya_samskara=None):
         p += s*t/e
     return p
 
+# The vyAsavargAdravihatAt series
+def vyasavargad(v, n=10):
+    '''
+    Calculates the paridhi (circumference) from the vyAsa (diameter)
 
-__all__ = ["vyase"]
+    Uses the vyAsavargAdravihatAt series
+
+    Inputs:
+                   v: diameter
+                   n: number of terms
+    Returns:
+                   p: circumference
+    '''
+    t = math.sqrt(12 * v**2)  # First term
+    p = t
+    s = -1   # Sign of next term
+    # C = sqrt(12d^2) (1 - 1/3.3 + 1/(3^2.5)+1/(3^3.7) ...) 
+    for i in range(1,n):
+        p += s*t/(3**i*(2*i+1))
+        s = s*-1
+    return p
+
+
+__all__ = ["vyase", "vyasavargad"]
