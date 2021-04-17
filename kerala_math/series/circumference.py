@@ -32,18 +32,18 @@ def vyase(v, n=10, antya_samskara=None):
     # Add end term
     if antya_samskara == 0:
         # Zeroth order correction
-        p += s*t/(2*((2*(i+1)+1)))
+        p += s*t/(2*((2*(n-1)+1)))
     elif antya_samskara == 1:
         # First order
-        p += s*t/(2*((2*(i+1)+1)) + 2)
+        p += s*t/(2*((2*(n-1)+1)) + 2)
     elif antya_samskara == 2:
         # Second Order
-        e = (2*((2*(i+1)+1)) + 2)
+        e = (2*((2*(n-1)+1)) + 2)
         e = e + 4/e
         p += s*t/e
     elif antya_samskara == 3:
         # Third Order
-        e = (2*((2*(i+1)+1)) + 2)
+        e = (2*((2*(n-1)+1)) + 2)
         e = e + 4/(e + 16/e)
         p += s*t/e
     return p
