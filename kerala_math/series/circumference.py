@@ -23,10 +23,14 @@ def vyase(v, n=10, antya_samskara=None):
     t = 4*v  # First term
     p = t
     s = -1   # Sign of next term
+    # C = 4v - 4v/3 + 4v/5 - 4v/7 ...
     for i in range(n-1):
         p += s*t/(2*(i+1)+1)
         s = s*-1
-    # FIXME add end term
+    # Add end term
+    if antya_samskara == 0:
+        # Zeroth order correction
+        pass
     return p
 
 
