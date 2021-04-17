@@ -16,7 +16,9 @@ def vyase(v, n=10, antya_samskara=None):
     Inputs:
                    v: diameter
                    n: number of terms
-      antya_samskara: end_term
+      antya_samskara: None (default) or
+                      k for kth order end-correction
+                      where k in (0, 1, 2, 3)
     Returns:
                    p: circumference
     '''
@@ -30,7 +32,20 @@ def vyase(v, n=10, antya_samskara=None):
     # Add end term
     if antya_samskara == 0:
         # Zeroth order correction
-        pass
+        p += s*t/(2*((2*(i+1)+1)))
+    elif antya_samskara == 1:
+        # First order
+        p += s*t/(2*((2*(i+1)+1)) + 2)
+    elif antya_samskara == 2:
+        # Second Order
+        e = (2*((2*(i+1)+1)) + 2)
+        e = e + 4/e
+        p += s*t/e
+    elif antya_samskara == 3:
+        # Third Order
+        e = (2*((2*(i+1)+1)) + 2)
+        e = e + 4/(e + 16/e)
+        p += s*t/e
     return p
 
 
