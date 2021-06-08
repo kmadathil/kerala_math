@@ -4,9 +4,10 @@ from fractions import Fraction
 _k = [0 for i in range(24)]
 _b = [0 for i in range(24)]
 
-_k[0] = _b[0] = 224 + Fraction(50, 60)
+_k[0] = _b[0] = 224 + Fraction(50, 60) + Fraction(22, 3600)
 
-divisor = 233 + Fraction(1, 2)
+# raNgebAlAstrI
+divisor = 233 + Fraction(32, 60)
 
 # Nilakantha recurrence relations
 for i in range(1,24):
