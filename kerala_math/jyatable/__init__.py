@@ -10,15 +10,20 @@ def to_mst(f: float):
     fourths, _r = divmod(_r, 60)
     return int(minutes), int(seconds), int(thirds), int(fourths)
 
-def to_float(m, s, t=0, f=0):
-    return m + s/60 + t/3600 + f/216000
+def to_float(m,*args):
+    t = m 
+    d = 60
+    for a in args:
+        t += a/d
+        d *= 60
+    return t
 
 
 # Class that implements Minutes, seconds, thirds, fourths
 class MST(object):
-    def __init__(self, minutes, seconds=None, thirds=0, fourths=0):
-        if seconds is not None:
-            self.mst = (minutes, seconds, thirds, fourths)
+    def __init__(self, minutes, *rest):
+        if rest:
+            self.mst = (minutes, *rest)
         else:
             self.mst = to_mst(minutes)
 
