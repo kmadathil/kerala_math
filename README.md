@@ -2,10 +2,10 @@
 Python module to simulate computation using methods of the Kerala School of Mathematics
 
 ## Install
-Latest Release
+### Latest Release
 `pip install kerala_math`
 
-Current Development Master
+### Current Development Master
 `pip install git+https://github.com/kmadathil/kerala_math.git`
 
 ## Usage
