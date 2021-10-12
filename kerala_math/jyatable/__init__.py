@@ -52,6 +52,10 @@ class MST(object):
 
     def __rmul__(self, other):
         return self.__mul__(other);
+
+    def __pow__(self, other):
+        a = to_mst(float(self)**other)
+        return MST(*a)
        
     def __float__(self):
         return to_float(*self.mst)

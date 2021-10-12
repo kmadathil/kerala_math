@@ -68,7 +68,7 @@ madhava_verse =  [
     
 def khandajya(k: int):
     """
-    Return the kth khandajya computed by the aryabhata recurrence
+    Return the kth khandajya computed by the madhava table
 
     Inputs:
       k (int) : index from 0 to 23
@@ -80,7 +80,7 @@ def khandajya(k: int):
 
 def pindajya(k: int):
     """
-    Return the kth pindajya computed by the aryabhata recurrence
+    Return the kth pindajya computed by the madhava table
 
     Inputs:
       k (int) : index from 0 to 23
